@@ -5,7 +5,9 @@ import {
   Link
 } from "react-router-dom";
 
-import Message from './Message/Message'
+import Problem from './Problem';
+import Message from './Message/Message';
+import MessageInstructions from './Message/MessageInstructions';
 import CounterDashboard from './Counter/CounterDashboard';
 
 function App() {
@@ -21,8 +23,14 @@ function App() {
       </div>
 
       <Routes>
-        <Route exact path="/message" element={<Message />} />
-        <Route exact path="/counter" element={<CounterDashboard />} />
+        <Route 
+          exact path="/message" 
+          element={<Problem name={'Message'} instructions={<MessageInstructions/>} implementation={<Message />} />} 
+        />
+        <Route 
+          exact path="/counter" 
+          element={<CounterDashboard />} 
+        />
       </Routes>
     </BrowserRouter>
     
