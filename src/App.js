@@ -10,6 +10,8 @@ import Message from './Message/Message';
 import MessageInstructions from './Message/MessageInstructions';
 import CounterDashboard from './Counter/CounterDashboard';
 import CounterInstructions from "./Counter/CounterInstructions";
+import Toggle from "./Toggle/Toggle";
+import ToggleInstructions from './Toggle/ToggleInstructions';
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <ul>
           <li><Link to="/message">Message</Link></li>
           <li><Link to="/counter">Counter</Link></li>
+          <li><Link to="/toggle">Toggle</Link></li>
         </ul>
       </div>
 
@@ -31,6 +34,10 @@ function App() {
         <Route 
           exact path="/counter" 
           element={<Problem name={'Counter'} instructions={<CounterInstructions/>} implementation={<CounterDashboard/>} />} 
+        />
+        <Route 
+          exact path="/toggle" 
+          element={<Problem name={'Toggle'} instructions={<ToggleInstructions/>} implementation={<Toggle/>} />} 
         />
       </Routes>
     </BrowserRouter>
