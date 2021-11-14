@@ -6,7 +6,7 @@ const Message = () => {
   
   return(
     <div>
-      <a href="#" onClick={() => setShow(!show)}>Want to buy a new car?</a>
+      <a href="/" onClick={(e) => {e.preventDefault(); setShow(!show)}}>Want to buy a new car?</a>
       { show && <p>Call +11 22 33 44 now!</p> }
     </div>
   )
