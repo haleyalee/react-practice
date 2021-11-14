@@ -1,0 +1,16 @@
+p {
+  margin-bottom: 1rem;
+}
+
+.counter {
+  padding: 10px;
+}
+
+.counter .counter-controls {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.counter .counter-controls button {
+  margin-right: 4px;
+}
