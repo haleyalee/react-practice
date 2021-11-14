@@ -25,10 +25,7 @@ function CounterDashboard() {
   }
 
   return (
-    <div style={{padding: '1rem'}}>
-
-      <h2>Counter</h2>
-
+    <div>
       <button onClick={addCounter}>Add counter</button>
       { counters.map((counter, index) =>
         <Counter 

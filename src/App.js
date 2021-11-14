@@ -9,6 +9,7 @@ import Problem from './Problem';
 import Message from './Message/Message';
 import MessageInstructions from './Message/MessageInstructions';
 import CounterDashboard from './Counter/CounterDashboard';
+import CounterInstructions from "./Counter/CounterInstructions";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
         />
         <Route 
           exact path="/counter" 
-          element={<CounterDashboard />} 
+          element={<Problem name={'Counter'} instructions={<CounterInstructions/>} implementation={<CounterDashboard/>} />} 
         />
       </Routes>
     </BrowserRouter>
