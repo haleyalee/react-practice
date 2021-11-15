@@ -14,6 +14,8 @@ import Toggle from "./Toggle/Toggle";
 import ToggleInstructions from './Toggle/ToggleInstructions';
 import Todo from "./Todo/Todo";
 import TodoInstructions from "./Todo/TodoInstructions";
+import KanbanInstructions from "./Kanban/KanbanInstructions";
+import Kanban from "./Kanban/Kanban";
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
           <li><Link to="/counter">Counter</Link></li>
           <li><Link to="/toggle">Toggle</Link></li>
           <li><Link to="/todo">Todo</Link></li>
+          <li><Link to="/kanban">Kanban</Link></li>
         </ul>
       </div>
 
@@ -45,6 +48,10 @@ function App() {
         <Route
           exact path="/todo"
           element={<Problem name={'Todo'} instructions={<TodoInstructions/>} implementation={<Todo/>} />} 
+        />
+        <Route
+          exact path="/kanban"
+          element={<Problem name={'Kanban'} instructions={<KanbanInstructions/>} implementation={<Kanban/>} />}
         />
       </Routes>
     </BrowserRouter>

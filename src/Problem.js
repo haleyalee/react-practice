@@ -6,6 +6,8 @@ function Problem(props) {
       <h2>{props.name}</h2>
       {props.instructions}
 
+      <hr />
+
       <h3>Implementation</h3>
       {props.implementation}
     </div>
