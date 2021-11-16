@@ -9,15 +9,17 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  transform: rotateY(var(--rotate-y), 0);
+  cursor: pointer;
+  transform: rotateY(var(--rotate-y, 0));
   transform-style: preserve-3d;
+  transition: 500ms;
 }
 
-/* .card .flip {
+.flip {
   --rotate-y: 180deg;
-} */
+}
 
-/* .card .front,
+.card .front,
 .card .back {
   position: absolute;
   backface-visibility: hidden;
@@ -25,7 +27,7 @@
 
 .card .back {
   transform: rotateY(180deg);
-} */
+}
 
 #flashcards {
   display: flex;

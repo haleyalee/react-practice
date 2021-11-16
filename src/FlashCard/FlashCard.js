@@ -13,7 +13,7 @@ function FlashCard() {
     { front: 'Insist on the Highest Standards', back: '-'}
   ];
 
-  const [deck, setDeck] = useState(initialDeck);
+  const [deck] = useState(initialDeck);
   const [current, setCurrent] = useState(0);
 
   const goBack = () => {
@@ -37,19 +37,12 @@ export default FlashCard
 
 const Card = (props) => {
   const {front, back} = props;
-
-  const [showFront, setShowFront] = useState(true);
-
-  const handleFlip = () => {
-    setShowFront(!showFront)
-  }
+  const [flip, setFlip] = useState(false);
   
   return (
-    <div className="card" onClick={handleFlip}>
-      { (showFront)
-        ? <div className="front">{front}</div>
-        : <div className="back">{back}</div>
-      }
+    <div className={"card " + (flip ? "flip" : "")} onClick={() => setFlip(!flip)}>
+      <div className="front">{front}</div>
+      <div className="back">{back}</div>    
     </div>
   )
 }
