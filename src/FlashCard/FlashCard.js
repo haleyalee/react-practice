@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './FlashCard.css';
 
 function FlashCard() {
@@ -16,6 +16,13 @@ function FlashCard() {
   const [deck] = useState(initialDeck);
   const [current, setCurrent] = useState(0);
 
+  useEffect(() => {
+    window.addEventListener("keydown", (e) => {
+      if (e.key === 'ArrowLeft') goBack();
+      else if (e.key === 'ArrowRight') goForward();
+    }, [])
+  })
+
   const goBack = () => {
     (current === 0) ? setCurrent(deck.length-1) : setCurrent(current-1)
   }
@@ -25,7 +32,13 @@ function FlashCard() {
   }
 
   return (
-    <div id="flashcards">
+    <div 
+      id="flashcards" 
+      onKeyDown={(e) => { 
+        if (e.key === '37') goBack(); 
+        else if (e.key === '39') goForward();
+      }}
+    >
       <button onClick={goBack}>Back</button>
       <Card front={deck[current].front} back={deck[current].back} />
       <button onClick={goForward}>Next</button>
@@ -38,9 +51,19 @@ export default FlashCard
 const Card = (props) => {
   const {front, back} = props;
   const [flip, setFlip] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("keydown", (e) => {
+      if (e.key === ' ') setFlip(!flip)
+    }, [])
+  })
   
   return (
-    <div className={"card " + (flip ? "flip" : "")} onClick={() => setFlip(!flip)}>
+    <div 
+      className={"card " + (flip ? "flip" : "")} 
+      onClick={() => setFlip(!flip)} 
+      onKeyDown={(e) => { if (e.key === '32') setFlip(!flip) }}
+    >
       <div className="front">{front}</div>
       <div className="back">{back}</div>    
     </div>
