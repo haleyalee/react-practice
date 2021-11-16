@@ -16,6 +16,8 @@ import Todo from "./Todo/Todo";
 import TodoInstructions from "./Todo/TodoInstructions";
 import KanbanInstructions from "./Kanban/KanbanInstructions";
 import Kanban from "./Kanban/Kanban";
+import FlashCardInstructions from "./FlashCard/FlashCardInstructions";
+import FlashCard from "./FlashCard/FlashCard";
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
           <li><Link to="/toggle">Toggle</Link></li>
           <li><Link to="/todo">Todo</Link></li>
           <li><Link to="/kanban">Kanban</Link></li>
+          <li><Link to="/flashcard">Flash Card</Link></li>
         </ul>
       </div>
 
@@ -52,6 +55,10 @@ function App() {
         <Route
           exact path="/kanban"
           element={<Problem name={'Kanban'} instructions={<KanbanInstructions/>} implementation={<Kanban/>} />}
+        />
+        <Route
+          exact path="/flashcard"
+          element={<Problem name={'Flash Card'} instructions={<FlashCardInstructions/>} implementation={<FlashCard/>} />}
         />
       </Routes>
     </BrowserRouter>
