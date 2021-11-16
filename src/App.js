@@ -18,6 +18,8 @@ import KanbanInstructions from "./Kanban/KanbanInstructions";
 import Kanban from "./Kanban/Kanban";
 import FlashCardInstructions from "./FlashCard/FlashCardInstructions";
 import FlashCard from "./FlashCard/FlashCard";
+import DropdownInstructions from './Dropdown/DropdownInstructions';
+import Dropdown from "./Dropdown/Dropdown";
 
 function App() {
   return (
@@ -32,6 +34,7 @@ function App() {
           <li><Link to="/todo">Todo</Link></li>
           <li><Link to="/kanban">Kanban</Link></li>
           <li><Link to="/flashcard">Flash Card</Link></li>
+          <li><Link to="/dropdown">Dropdown</Link></li>
         </ul>
       </div>
 
@@ -59,6 +62,10 @@ function App() {
         <Route
           exact path="/flashcard"
           element={<Problem name={'Flash Card'} instructions={<FlashCardInstructions/>} implementation={<FlashCard/>} />}
+        />
+        <Route
+          exact path="/dropdown"
+          element={<Problem name={'Dropdown'} instructions={<DropdownInstructions/>} implementation={<Dropdown/>} />}
         />
       </Routes>
     </BrowserRouter>
