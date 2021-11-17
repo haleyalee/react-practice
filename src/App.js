@@ -22,6 +22,8 @@ import DropdownInstructions from './Dropdown/DropdownInstructions';
 import Dropdown from "./Dropdown/Dropdown";
 import AccordionInstructions from './Accordion/AccordionInstructions';
 import Accordion from "./Accordion/Accordion";
+import TicTacToeInstructions from './TicTacToe/TicTacToeInstructions';
+import TicTacToe from "./TicTacToe/TicTacToe";
 
 function App() {
   return (
@@ -38,6 +40,7 @@ function App() {
           <li><Link to="/flashcard">Flash Card</Link></li>
           <li><Link to="/dropdown">Dropdown</Link></li>
           <li><Link to="/accordion">Accordion</Link></li>
+          <li><Link to="/tictactoe">TicTacToe</Link></li>
         </ul>
       </div>
 
@@ -73,6 +76,10 @@ function App() {
         <Route
           exact path="/accordion"
           element={<Problem name={'Accordion'} instructions={<AccordionInstructions/>} implementation={<Accordion/>} />}
+        />
+        <Route
+          exact path="/tictactoe"
+          element={<Problem name={'TicTacToe'} instructions={<TicTacToeInstructions/>} implementation={<TicTacToe/>} />}
         />
       </Routes>
     </BrowserRouter>
